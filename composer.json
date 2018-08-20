@@ -1,6 +1,9 @@
 {
     "type": "library",
     "license": "proprietary",
+    "name": "ronfroy/enumerable",
+    "description": "PHP enumeration implementation",
+    "keywords": ["enumerable", "enum", "enumeration"],
     "require": {
         "php": "^7.1"
     },
