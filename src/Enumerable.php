@@ -83,11 +83,11 @@ abstract class Enumerable
     }
 
     /**
-     * @param $enum
+     * @param mixed|Enumerable $enum
      *
-     * @return mixed
+     * @return bool
      */
-    final public function isSameAs($enum)
+    final public function equals($enum)
     {
         if (is_object($enum)) {
             if (get_class($enum) !== get_class($this)) {
