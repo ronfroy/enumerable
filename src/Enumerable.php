@@ -39,8 +39,6 @@ abstract class Enumerable
     }
 
     /**
-     * @throws \ReflectionException
-     *
      * @return array
      */
     final public static function getAll(): array
@@ -57,8 +55,6 @@ abstract class Enumerable
     /**
      * @param string $name
      *
-     * @throws \ReflectionException
-     *
      * @return bool
      */
     final public static function isValidName(string $name): bool
@@ -71,8 +67,6 @@ abstract class Enumerable
     /**
      * @param mixed $value
      *
-     * @throws \ReflectionException
-     *
      * @return bool
      */
     final public static function isValidValue($value): bool
@@ -83,7 +77,26 @@ abstract class Enumerable
     }
 
     /**
-     * @param mixed|Enumerable $enum
+     * @param Enumerable|mixed $enum1
+     * @param Enumerable|mixed $enum2
+     *
+     * @return bool
+     */
+    final public static function compare($enum1, $enum2): bool
+    {
+        if ($enum1 instanceof Enumerable) {
+            return $enum1->equals($enum2);
+        }
+
+        if ($enum2 instanceof Enumerable) {
+            return $enum2->equals($enum1);
+        }
+
+        return self::isValidValue($enum1) && self::isValidValue($enum2) && $enum1 === $enum2;
+    }
+
+    /**
+     * @param Enumerable|mixed $enum
      *
      * @return bool
      */
