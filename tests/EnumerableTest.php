@@ -11,8 +11,6 @@ class EnumerableTest extends TestCase
 {
     /**
      * @covers \Enumerable\Enumerable::getConstants
-     *
-     * @throws \ReflectionException
      */
     public function testGetConstants(): void
     {
@@ -24,8 +22,6 @@ class EnumerableTest extends TestCase
 
     /**
      * @covers \Enumerable\Enumerable::isValidName
-     *
-     * @throws \ReflectionException
      */
     public function testIsValidName(): void
     {
@@ -36,8 +32,6 @@ class EnumerableTest extends TestCase
 
     /**
      * @covers \Enumerable\Enumerable::isValidValue
-     *
-     * @throws \ReflectionException
      */
     public function testIsValidValue(): void
     {
@@ -47,20 +41,38 @@ class EnumerableTest extends TestCase
     }
 
     /**
-     * @covers \Enumerable\Enumerable::isSameAs
+     * @covers \Enumerable\Enumerable::equals
      */
-    public function testIsSameAs(): void
+    public function testEquals(): void
     {
         $enum1 = new TestEnum(TestEnum::ENUM_1);
         $enum2 = new TestEnum(TestEnum::ENUM_1);
         $enum3 = new TestEnum(TestEnum::ENUM_2);
         $enum4 = new TestEnum2(TestEnum2::ENUM_1);
 
-        $this->assertTrue($enum1->isSameAs(TestEnum::ENUM_1));
-        $this->assertFalse($enum1->isSameAs(TestEnum::ENUM_2));
-        $this->assertTrue($enum1->isSameAs($enum2));
-        $this->assertFalse($enum1->isSameAs($enum3));
-        $this->assertFalse($enum1->isSameAs($enum4));
+        $this->assertTrue($enum1->equals(TestEnum::ENUM_1));
+        $this->assertFalse($enum1->equals(TestEnum::ENUM_2));
+        $this->assertTrue($enum1->equals($enum2));
+        $this->assertFalse($enum1->equals($enum3));
+        $this->assertFalse($enum1->equals($enum4));
+    }
+
+    /**
+     * @covers \Enumerable\Enumerable::compare()
+     */
+    public function testCompare(): void
+    {
+        $enum1 = new TestEnum(TestEnum::ENUM_1);
+        $enum2 = new TestEnum(TestEnum::ENUM_1);
+        $enum3 = new TestEnum(TestEnum::ENUM_2);
+        $enum4 = new TestEnum2(TestEnum2::ENUM_1);
+
+        $this->assertTrue(TestEnum::compare(TestEnum::ENUM_1, TestEnum::ENUM_1));
+        $this->assertFalse(TestEnum::compare(TestEnum::ENUM_1, TestEnum::ENUM_2));
+        $this->assertTrue(TestEnum::compare(TestEnum::ENUM_1, $enum1));
+        $this->assertTrue(TestEnum::compare($enum1, $enum2));
+        $this->assertFalse(TestEnum::compare($enum1, $enum3));
+        $this->assertFalse(TestEnum::compare($enum1, $enum4));
     }
 
     /**

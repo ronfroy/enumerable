@@ -49,3 +49,4 @@ Static methods:
 - `getAll()` returns all possible values as an array (name in key, value in value)
 - `isValidName()` Check if tested name is valid on enum set
 - `isValidValue()` Check if tested value is valid on enum set
+- `compare()` Tests whether two enum instances or value are equal
