@@ -39,10 +39,10 @@ new Status(Status::IN_PROGRESS); // object notation
 
 Methods:
 
-- `__construct()` Instanciate a new enum as object
+- `__construct()` Instantiate a new enum as object
 - `__toString()` Display the enum value as string
 - `__invoke` Return the enum value
-- `isSameAs()` Tests whether enum instances or value are equal
+- `equals()` Tests whether enum instances or value are equal
 
 Static methods:
 
