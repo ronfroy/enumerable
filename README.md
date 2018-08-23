@@ -42,11 +42,11 @@ Methods:
 - `__construct()` Instantiate a new enum as object
 - `__toString()` Display the enum value as string
 - `__invoke` Return the enum value
-- `equals()` Tests whether enum instances or value are equal
+- `equals($enum)` Tests whether enum instances or value are equal
 
 Static methods:
 
 - `getAll()` returns all possible values as an array (name in key, value in value)
-- `isValidName()` Check if tested name is valid on enum set
-- `isValidValue()` Check if tested value is valid on enum set
-- `compare()` Tests whether two enum instances or value are equal
+- `isValidName($name)` Check if tested name is valid on enum set
+- `isValidValue($value)` Check if tested value is valid on enum set
+- `compare($enum1, $enum2)` Tests whether two enum instances or value are equal
