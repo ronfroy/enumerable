@@ -1,7 +1,7 @@
 Enumerable
 ===
 
-[![Build Status](https://travis-ci.org/ronfroy/enumerable.svg?branch=master)](https://travis-ci.org/ronfroy/enumerable)
+[![Build Status](https://travis-ci.org/ronfroy/enumerable.svg?branch=master)](https://travis-ci.org/ronfroy/enumerable) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/ronfroy/enumerable/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/ronfroy/enumerable/?branch=master)
 
 ### Installation
 ```
