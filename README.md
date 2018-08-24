@@ -1,6 +1,8 @@
 Enumerable
 ===
 
+[![Build Status](https://travis-ci.org/ronfroy/enumerable.svg?branch=master)](https://travis-ci.org/ronfroy/enumerable)
+
 ### Installation
 ```
 composer require `ronfroy/enumerable`
